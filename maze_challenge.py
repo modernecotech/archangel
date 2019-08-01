@@ -28,5 +28,13 @@ Hayder's solution.
 
 I looked at a number of potential algorithms for graph/tree traversal. 
 
+I chose the D* Lite as it combines A* with incremental search to shorten the path. 
+
+I could have written an implementation, but there's already a decent example on github 
+which can be found here. 
+
+https://github.com/samdjstephens/pydstarlite
+
+
 '''
 
