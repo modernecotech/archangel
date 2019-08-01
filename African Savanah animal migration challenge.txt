@@ -1,0 +1,36 @@
+Archangel Group 
+
+IoT Challenge
+Propose a high-level design for a smart IoT device that can monitor an animal migration bottleneck
+in the African savannah to count numbers of each species in each direction of travel. Include a major
+components list, outline work plan for the complete solution. Candidates are not expected to spend
+more than a few hours on the task.
+
+
+
+Solution. 
+
+
+A number of different approaches can be used for tracking a large number of animals. Modern Machine vision 
+cameras are quite good at counting heads in crowds, however when it comes to animals, they
+do come in very different shapes and sizes and the camera's work would be much more difficult. 
+
+Thermal camera systems could also work, but the job of counting a large number of animals passing through
+in parallel is still quite complex.
+
+If there is a choke point through which animals pass, I would investigate the use of pressure counting 
+systems. through the use these mats put under a thin layer of soil can accurately count animals passing through
+and by installing several systems in series, we can also detect the direction of motion and size of 
+animals. 
+
+The basic technology is not super complex. the technology used by traffic counters is applicable. 
+
+The pressure sensor can be a force sensitive resistor. It would have a top and bottom protective layer
+The entire device would be covered in sand during operation. 
+
+The anciliary parts would be an low power embedded counter and a separate long range telemetry system (LORAWAN/SIGFOX) 
+to send signals back to base. The reason I'd use two separate embedded devices is to use a very low
+power system for counting and collating, and then sending back the collated data once every few hours. 
+This way the battery would not need recharging and there would not need to be a need for external power. 
+
+For a more complex system, the pressure sensors (piezo electric sensor) could themselves generate the power used by the micropocessor and lorawan, allowing a reduction in battery size and an unobstructed operational life limited only by the physical survival of the components.

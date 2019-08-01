@@ -23,3 +23,10 @@ It is expected to spend no more than a few hours on this task.
 '''
 
 
+'''
+Hayder's solution. 
+
+I looked at a number of potential algorithms for graph/tree traversal. 
+
+'''
+
