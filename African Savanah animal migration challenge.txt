@@ -11,26 +11,43 @@ more than a few hours on the task.
 Solution. 
 
 
-A number of different approaches can be used for tracking a large number of animals. Modern Machine vision 
-cameras are quite good at counting heads in crowds, however when it comes to animals, they
+A number of different approaches can be used for tracking a large number of animals. Modern Machine vision cameras are quite good at counting heads in crowds, however when it comes to animals, they
 do come in very different shapes and sizes and the camera's work would be much more difficult. 
 
-Thermal camera systems could also work, but the job of counting a large number of animals passing through
-in parallel is still quite complex.
+Thermal camera systems could also work, but the job of counting a large number of animals passing through in parallel is still quite complex.
 
-If there is a choke point through which animals pass, I would investigate the use of pressure counting 
-systems. through the use these mats put under a thin layer of soil can accurately count animals passing through
-and by installing several systems in series, we can also detect the direction of motion and size of 
-animals. 
+If there is a choke point through which animals pass, I would investigate the use of pressure counting systems. Through the use these mats put under a thin layer of soil can accurately count animals passing through and by installing several systems in series, we can also detect the direction of motion and size of animals. 
 
 The basic technology is not super complex. the technology used by traffic counters is applicable. 
 
-The pressure sensor can be a force sensitive resistor. It would have a top and bottom protective layer
-The entire device would be covered in sand during operation. 
+The pressure sensor can be a force sensitive resistor. It would have a top and bottom protective layer The entire device would be covered in sand during operation. 
 
-The anciliary parts would be an low power embedded counter and a separate long range telemetry system (LORAWAN/SIGFOX) 
-to send signals back to base. The reason I'd use two separate embedded devices is to use a very low
-power system for counting and collating, and then sending back the collated data once every few hours. 
-This way the battery would not need recharging and there would not need to be a need for external power. 
+The anciliary parts would be an low power embedded counter and a separate long range telemetry system (LORAWAN/SIGFOX) to send signals back to base. The reason I'd use two separate embedded devices is to use a very low
+power system for counting and collating, and then sending back the collated data once every few hours. This way the battery would not need recharging and there would not need to be a need for external power. 
 
 For a more complex system, the pressure sensors (piezo electric sensor) could themselves generate the power used by the micropocessor and lorawan, allowing a reduction in battery size and an unobstructed operational life limited only by the physical survival of the components.
+
+Cameras can be added to the system to give a second measurement medium for verification and clarification. They would be solar powered and use motion sensors to trigger activation (coupling an off the shelf hunting cam with the lorawan and solar panel would suffice).
+
+Basic component list: 
+-Mat bottom (rubber)
+-Piezo resistive layer
+-Mat Top (rubber)
+-MCU with Real time clock for counter
+-LoraWan Unit for periodic transmission
+-Battery and charge regulator
+-HQ Single Board Computer with data collation and upload to internet
+
+Optional items: 
+-Hunting camera with motion trigger
+-Small solar panel for longer unatended operation
+-Lorawan transmitter (or integration with mat transmitter)
+
+
+Outline work plan 
+-Evaluate different strain gauge, piezo crystals and pressure sensors
+-Construct initial prototype using off the shelf lorawan /MCU and rubber mats
+-Build software prototype for logging and presenting data
+-Make test deployment near office
+-Optimise design for savannah environmental factors
+-deploy in savannah
